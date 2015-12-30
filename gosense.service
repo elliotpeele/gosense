@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 EnvironmentFile=-/etc/sysconfig/gosense
-ExecStart=/usr/sbin/gosense -uri $AMQP_URI -exchange sensornet.data -key sensornet.data -queue sensornet.data -exchange-type topic
+ExecStart=/usr/sbin/gosense -uri $AMQP_URI -exchange $EXCHANGE -key $KEY -queue $QUEUE -exchange-type topic -port $PORT
 
 [Install]
 WantedBy=multi-user.target
